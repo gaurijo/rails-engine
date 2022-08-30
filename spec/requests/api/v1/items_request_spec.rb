@@ -22,4 +22,17 @@ describe "Items API" do
       expect(item[:attributes][:merchant_id]).to be_a(Integer)
     end
   end
+
+  it "get a particular item based on id" do 
+
+    id = create(:merchant).id 
+    item = create(:item, merchant_id: id)
+
+    get "/api/v1/items/#{id}"
+
+    item = JSON.parse(response.body, symbolize_names: true)[:data]
+
+    expect(response).to be_successful
+    expect(item).to have_key(:id)
+  end
 end
