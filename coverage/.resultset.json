@@ -227,8 +227,12 @@
           null
         ]
       },
-      "/Users/gaurijoshi/turing/3Module/projects/rails_engine/rails-engine/app/models/merchant.rb": {
+      "/Users/gaurijoshi/turing/3Module/projects/rails_engine/rails-engine/app/models/customer.rb": {
         "lines": [
+          1,
+          1,
+          1,
+          1,
           1,
           null
         ]
@@ -240,11 +244,141 @@
           null
         ]
       },
+      "/Users/gaurijoshi/turing/3Module/projects/rails_engine/rails-engine/spec/models/invoice_item_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          2,
+          null
+        ]
+      },
+      "/Users/gaurijoshi/turing/3Module/projects/rails_engine/rails-engine/app/models/invoice_item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/gaurijoshi/turing/3Module/projects/rails_engine/rails-engine/spec/models/invoice_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null
+        ]
+      },
+      "/Users/gaurijoshi/turing/3Module/projects/rails_engine/rails-engine/app/models/invoice.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/gaurijoshi/turing/3Module/projects/rails_engine/rails-engine/spec/models/item_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null
+        ]
+      },
+      "/Users/gaurijoshi/turing/3Module/projects/rails_engine/rails-engine/app/models/item.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/gaurijoshi/turing/3Module/projects/rails_engine/rails-engine/spec/models/merchant_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          2,
+          null
+        ]
+      },
+      "/Users/gaurijoshi/turing/3Module/projects/rails_engine/rails-engine/app/models/merchant.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/gaurijoshi/turing/3Module/projects/rails_engine/rails-engine/spec/models/transaction_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          2,
+          null
+        ]
+      },
+      "/Users/gaurijoshi/turing/3Module/projects/rails_engine/rails-engine/app/models/transaction.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/gaurijoshi/turing/3Module/projects/rails_engine/rails-engine/spec/requests/api/v1/merchants_request_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          5,
+          5,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/gaurijoshi/turing/3Module/projects/rails_engine/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
         "lines": [
           1,
           1,
-          null,
+          1,
+          1,
           null,
           null
         ]
@@ -254,8 +388,16 @@
           1,
           null
         ]
+      },
+      "/Users/gaurijoshi/turing/3Module/projects/rails_engine/rails-engine/app/serializers/merchant_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1661811337
+    "timestamp": 1661822544
   }
 }
