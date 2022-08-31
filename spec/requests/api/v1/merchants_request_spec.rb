@@ -37,7 +37,7 @@ describe "Merchants API" do
 
   it "finds one particular merchant by name fragment" do 
 
-    merchant1 = Merchant.create!(name: "iLlana")
+    merchant1 = Merchant.create!(name: "Illana")
     merchant2 = Merchant.create!(name: "Sam")
     # merchant1 = create(:merchant)
     # merchant2 = create(:merchant)
