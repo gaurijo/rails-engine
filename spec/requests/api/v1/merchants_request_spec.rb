@@ -32,5 +32,29 @@ describe "Merchants API" do
 
     expect(response).to be_successful
     expect(merchant).to have_key(:id)
+    expect(merchant[:id]).to be_a(String)
+  end
+
+  it "finds one particular merchant by name fragment" do 
+
+    merchant1 = Merchant.create!(name: "iLlana")
+    merchant2 = Merchant.create!(name: "Sam")
+    # merchant1 = create(:merchant)
+    # merchant2 = create(:merchant)
+    # merchant3 = create(:merchant)
+
+    get "/api/v1/merchants/find?name=iLl"
+
+    merchant = JSON.parse(response.body, symbolize_names: true)
+    data = merchant[:data][:attributes]
+    # require 'pry'; binding.pry 
+
+    expect(response).to be_successful
+    expect(data).to have_key(:name)
+    expect(data[:name]).to be_a(String)
+    expect(data[:name]).to eq(merchant1.name)
+    expect(data[:name]).to_not eq(merchant2.name)
+    
+    # expect(merchant[:attributes]).to have_key(:id)
   end
 end
