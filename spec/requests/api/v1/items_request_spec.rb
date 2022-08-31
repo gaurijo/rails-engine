@@ -83,10 +83,47 @@ describe "Items API" do
 
   end
 
-  # it "updates an item" do 
-  #   merchant_id = create(:merchant).id 
-  #   id = create(:item, merchant_id: merchant_id).id
+  it "updates an existing item" do 
+    merchant_id = create(:merchant).id 
+    id = create(:item, merchant_id: merchant_id).id
+    previous_name = Item.last.name 
 
-  #   put "/api/v1/items/#{id}"
+    item_params = ({
+                    name: 'OxyClean',
+                    description: 'it cleans anything',
+                    unit_price: 20.11,
+                    merchant_id: merchant_id 
+                  })
+
+    headers = {"CONTENT_TYPE" => "application/json"}
+
+    put "/api/v1/items/#{id}", headers: headers, params: JSON.generate(item: item_params)
+    item = Item.find_by(id: id)
+
+    expect(response).to be_successful 
+    expect(item.name).to_not eq(previous_name)
+    expect(item.name).to eq('OxyClean')
+    #edge case - bad merchant id should return 404 or 400 error
+    #application controller has a method for this - need to implement it
+  end
+
+  # it "raises an error if a non-existing merchant id is used" do 
+  #   merchant1 = create(:merchant).id 
+  #   merchant2 = create(:merchant).id 
+  #   id = create(:item, merchant_id: merchant1).id
+
+  #   item_params = ({
+  #                   name: 'OxyClean',
+  #                   description: 'it cleans anything',
+  #                   unit_price: 20.11,
+  #                   merchant_id: merchant2
+  #                 })
+
+  #   headers = {"CONTENT_TYPE" => "application/json"}
+
+  #   put "/api/v1/items/#{id}", headers: headers, params: JSON.generate(item: item_params)
+  #   item = Item.find_by(id: id)
+
+  #   expect(response.status).to eq(404)
   # end
 end
