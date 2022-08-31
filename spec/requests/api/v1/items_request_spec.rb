@@ -107,6 +107,29 @@ describe "Items API" do
     #application controller has a method for this - need to implement it
   end
 
+  it "find all items by name fragment" do 
+    merchant_id = create(:merchant).id 
+    item1 = Item.create!(name: "harukane", description: 'this is an item', unit_price: 11.23, merchant_id: merchant_id)
+    item2 = Item.create!(name: "harukone", description: 'this is also an item', unit_price: 10.23, merchant_id: merchant_id)
+    item3 = Item.create!(name: "egg", description: 'more item', unit_price: 2.23, merchant_id: merchant_id)
+
+    get "/api/v1/items/find_all?name=hArU"
+
+    items = JSON.parse(response.body, symbolize_names: true)[:data]
+    # data = items[:data]
+    # require 'pry'; binding.pry 
+
+    expect(response).to be_successful
+    expect(items.count).to eq(2)
+
+    items.each do |item|
+      expect(item).to have_key(:attributes)
+      expect(item[:attributes][:name]).to be_a(String)
+      expect(item[:attributes][:unit_price]).to be_a(Float)
+      expect(item[:attributes][:merchant_id]).to be_a(Integer)
+    end
+  end
+
   # it "raises an error if a non-existing merchant id is used" do 
   #   merchant1 = create(:merchant).id 
   #   merchant2 = create(:merchant).id 
