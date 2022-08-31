@@ -73,8 +73,20 @@ describe "Items API" do
     merchant_id = create(:merchant).id 
     id = create(:item, merchant_id: merchant_id).id
 
+    expect(Item.count).to eq(1)
+
     delete "/api/v1/items/#{id}"
 
     expect(response).to be_successful
+    expect(Item.count).to eq(0)
+    expect{Item.find(id)}.to raise_error(ActiveRecord::RecordNotFound)
+
   end
+
+  # it "updates an item" do 
+  #   merchant_id = create(:merchant).id 
+  #   id = create(:item, merchant_id: merchant_id).id
+
+  #   put "/api/v1/items/#{id}"
+  # end
 end
