@@ -6,20 +6,23 @@ class Api::V1::ItemsController < ApplicationController
 
   def show 
     item = Item.find(params[:id])
-    # require 'pry'; binding.pry 
     render json: ItemSerializer.new(item)
   end
   
   def create 
     item = Item.create(item_params) 
-    # require 'pry'; binding.pry 
     render json: ItemSerializer.new(item), status: :created
-    # render json: ItemSerializer.new(item)
+  end
+  
+  def update 
+    item = Item.update(params[:id], item_params)
+    render json: ItemSerializer.new(item)
   end
 
-  # def destroy 
-  #   item = Item.destroy(item_params)
-  # end
+  def destroy 
+    item = Item.find(params[:id]).destroy
+    # item = Item.destroy(params[:id])
+  end
 
 private 
   def item_params 
