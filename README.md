@@ -11,8 +11,11 @@ This project focuses on the service-oriented architecture for an E-Commerce appl
 ## 🚀 About Me
 Hi! I'm Gauri, and I'm a back-end developer with a primary focus in Ruby on Rails. I am currently wrapping up my software engineering certificate at Turing School of Software and Design. When I'm not coding, I'm drinking iced coffee, going on long walks, and playing with my foster kittens. 
 
-## Run Locally
 
+## Database Schema
+[![Screen-Shot-2022-08-29-at-6-17-59-PM.png](https://i.postimg.cc/526XFwyD/Screen-Shot-2022-08-29-at-6-17-59-PM.png)](https://postimg.cc/Hr1Yq8Qt)
+
+## Run Locally
 Clone the project
 
 ```bash
