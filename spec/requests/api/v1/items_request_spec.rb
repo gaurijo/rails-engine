@@ -129,6 +129,7 @@ describe "Items API" do
       expect(item[:attributes][:merchant_id]).to be_a(Integer)
     end
   end
+end
 
   # it "can find items by price" do 
   #   merchant_id = create(:merchant).id 
@@ -150,7 +151,7 @@ describe "Items API" do
   #   expect(items).to eq([])
   #   expect(response.body).to include("something")
   # end
-end
+
 
 
 
