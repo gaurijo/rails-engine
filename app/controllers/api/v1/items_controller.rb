@@ -24,6 +24,15 @@ class Api::V1::ItemsController < ApplicationController
     # item = Item.destroy(params[:id])
   end
 
+  # def find_price 
+  #   items = Item.where("unit_price = ?", params[:unit_price]).all
+  #   if items.nil?
+  #     render json: {data: {message: "No items found"}}
+  #   else
+  #     render json: ItemSerializer.new(items)
+  #   end
+  # end
+
   def find_all 
     items = Item.where("name ILIKE ?", "%#{params[:name]}%").all
     if items.nil?
