@@ -128,6 +128,19 @@ describe "Items API" do
       expect(item[:attributes][:unit_price]).to be_a(Float)
       expect(item[:attributes][:merchant_id]).to be_a(Integer)
     end
+
+    get "/api/v1/items/find_all?name=xR"
+
+    items = JSON.parse(response.body, symbolize_names: true)[:data]
+    # require 'pry'; binding.pry 
+    expect(response).to be_successful
+    expect(items.count).to eq(0)
+    expect(response.body).to eq("{\"data\":[]}")
+    
+    # items.each do |item|
+    #   expect(item).to_not have_key(:attributes)
+    #   expect(item.response.body).to eq({})
+    # end
   end
 end
 
