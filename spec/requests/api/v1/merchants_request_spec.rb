@@ -29,6 +29,16 @@ describe "Merchants API" do
     expect(response).to be_successful
     expect(merchant).to have_key(:id)
     expect(merchant[:id]).to be_a(String)
+    expect(merchant[:attributes]).to have_key(:name)
+    expect(merchant[:attributes][:name]).to be_a(String)
+  end
+
+  it "renders an error if no such merchant exists" do
+    id = create(:merchant).id 
+
+    get "/api/v1/merchants/99999"
+
+    expect(response.status).to eq(404)
   end
 
   it "finds one particular merchant by name fragment" do 
