@@ -6,11 +6,11 @@ class Api::V1::ItemsController < ApplicationController
 
   def show 
     item = Item.find(params[:id])
-    if item.nil?
-      render json: { data: {message: "No items found"}}
-    else
-      render json: ItemSerializer.new(item)
-    end
+    # if item.nil?
+    #   render json: { data: {message: "No items found"}}
+    # else
+    render json: ItemSerializer.new(item)
+    # end
   end
   
   def create 
@@ -38,7 +38,11 @@ class Api::V1::ItemsController < ApplicationController
 
   def find_all 
     items = Item.where("name ILIKE ?", "%#{params[:name]}%").all
-    render json: ItemSerializer.new(items)
+    if items.nil?
+      render json: { data: {} }
+    else
+      render json: ItemSerializer.new(items)
+    end
   end
 
 private 
