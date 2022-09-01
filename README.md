@@ -9,7 +9,7 @@ This project focuses on the service-oriented architecture for an E-Commerce appl
 
 
 ## 🚀 About Me
-Hi! I'm Gauri, and I'm a back-end developer with a primary focus in Ruby on Rails. I am currently wrapping up my of software engineering certificate at Turing School of Software and Design. When I'm not coding, I'm drinking iced coffee, going on long walks, and playing with my foster kittens. 
+Hi! I'm Gauri, and I'm a back-end developer with a primary focus in Ruby on Rails. I am currently wrapping up my software engineering certificate at Turing School of Software and Design. When I'm not coding, I'm drinking iced coffee, going on long walks, and playing with my foster kittens. 
 
 ## Run Locally
 
