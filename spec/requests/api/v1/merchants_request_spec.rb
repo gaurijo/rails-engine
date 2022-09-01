@@ -54,6 +54,14 @@ describe "Merchants API" do
     expect(data[:name]).to be_a(String)
     expect(data[:name]).to eq(merchant1.name)
     expect(data[:name]).to_not eq(merchant2.name)
+
+    get "/api/v1/merchants/find?name=Mark"
+
+    merchant = JSON.parse(response.body, symbolize_names: true)
+    data = merchant[:data][:attributes]
+
+    expect(data).to eq(nil)
+    expect(response.body).to include("No merchants found")
     
     # expect(merchant[:attributes]).to have_key(:id)
   end

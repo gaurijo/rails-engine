@@ -130,6 +130,36 @@ describe "Items API" do
     end
   end
 
+  # it "can find items by price" do 
+  #   merchant_id = create(:merchant).id 
+  #   item1 = Item.create!(name: "harukane", description: 'this is an item', unit_price: 11.23, merchant_id: merchant_id)
+  #   item2 = Item.create!(name: "harukone", description: 'this is also an item', unit_price: 10.23, merchant_id: merchant_id)
+  #   item3 = Item.create!(name: "egg", description: 'more item', unit_price: 50.00, merchant_id: merchant_id)
+
+  #   get "/api/v1/items/find?min_price=50"
+
+  #   items = JSON.parse(response.body, symbolize_names: true)[:data]
+  #   # require 'pry'; binding.pry 
+  #   expect(response).to be_successful 
+  #   expect(response.status).to eq(200)
+
+  #   get "/api/v1/items/find?min_price=40"
+
+  #   items = JSON.parse(response.body, symbolize_names: true)[:data]
+
+  #   expect(items).to eq([])
+  #   expect(response.body).to include("something")
+  # end
+end
+
+
+
+
+
+
+
+
+
   # it "raises an error if a non-existing merchant id is used" do 
   #   merchant1 = create(:merchant).id 
   #   merchant2 = create(:merchant).id 
@@ -149,4 +179,4 @@ describe "Items API" do
 
   #   expect(response.status).to eq(404)
   # end
-end
+
