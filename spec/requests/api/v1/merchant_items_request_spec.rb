@@ -4,7 +4,7 @@ require 'rails_helper'
     it "gets a merchant's items" do 
 
     id = create(:merchant).id 
-    merchant_items = create_list(:item, 3, merchant_id: id) #faker lets us do this instead of manually creating merchant and items in test
+    merchant_items = create_list(:item, 3, merchant_id: id)
 
     get "/api/v1/merchants/#{id}/items"
 
@@ -17,5 +17,14 @@ require 'rails_helper'
       expect(merchant_item).to have_key(:id)
       expect(merchant_item[:id]).to be_a(String)
     end
+  end
+
+  it "returns an error if no such merchant id exists" do 
+    id = create(:merchant).id 
+    merchant_items = create_list(:item, 3, merchant_id: id)
+
+    get "/api/v1/merchants/99999/items"
+
+    expect(response.status).to eq(404)
   end
 end

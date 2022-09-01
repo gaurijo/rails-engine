@@ -5,12 +5,8 @@ describe "Merchants API" do
     create_list(:merchant, 5)
 
     get '/api/v1/merchants'
-
-    # require 'pry'; binding.pry 
     
     merchants = JSON.parse(response.body, symbolize_names: true)[:data]
-    # merchants = response_body[:data]
-    
     
     expect(response).to be_successful 
     expect(merchants.count).to eq(5)
@@ -39,15 +35,11 @@ describe "Merchants API" do
 
     merchant1 = Merchant.create!(name: "Illana")
     merchant2 = Merchant.create!(name: "Sam")
-    # merchant1 = create(:merchant)
-    # merchant2 = create(:merchant)
-    # merchant3 = create(:merchant)
-
+  
     get "/api/v1/merchants/find?name=iLl"
 
     merchant = JSON.parse(response.body, symbolize_names: true)
     data = merchant[:data][:attributes]
-    # require 'pry'; binding.pry 
 
     expect(response).to be_successful
     expect(data).to have_key(:name)
@@ -62,7 +54,5 @@ describe "Merchants API" do
 
     expect(data).to eq(nil)
     expect(response.body).to include("No merchants found")
-    
-    # expect(merchant[:attributes]).to have_key(:id)
   end
 end
