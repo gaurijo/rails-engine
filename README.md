@@ -1,26 +1,55 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Rails Engine Lite
+
+This project focuses on the service-oriented architecture for an E-Commerce application on the back-end. The end goal is to expose the data that powers the site through an API that the front end will consume.
+
+## Authors
+
+- [@gaurijoshi](https://www.github.com/gaurijo)
 
 
-Things you may want to cover:
+## 🚀 About Me
+Hi! I'm Gauri, and I'm a back-end developer with a primary focus in Ruby on Rails. I am currently wrapping up my of software engineering certificate at Turing School of Software and Design. When I'm not coding, I'm drinking iced coffee, going on long walks, and playing with my foster kittens. 
 
-* Ruby version
+## Run Locally
 
-* System dependencies
+Clone the project
 
-* Configuration
+```bash
+  git clone git@github.com:gaurijo/rails-engine.git
+```
 
-* Database creation
+Go to the project directory
 
-* Database initialization
+```bash
+  cd rails-engine
+```
 
-* How to run the test suite
+Install dependencies
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+  bundle install
+```
 
-* Deployment instructions
+Start the server
 
-* ...
-# rails-engine-lite
+```bash
+  rails s 
+```
+
+
+## Tech Stack
+
+**Client:** Ruby (2.7.4), JSON
+
+**Server:** Rails (5.2.8)
+
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  bundle exec rspec
+```
+
