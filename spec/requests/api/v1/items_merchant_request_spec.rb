@@ -17,4 +17,17 @@ RSpec.describe "Items Merchant API" do
     expect(item_merchant[:attributes][:name]).to be_a(String)
     expect(item_merchant[:id]).to_not eq(merchant2)
   end
+
+  it "renders an error if a item is not found" do  
+
+    merchant = create(:merchant).id 
+    merchant2 = create(:merchant).id 
+    id = create(:item, merchant_id: merchant).id
+
+    get "/api/v1/items/5555/merchant"
+
+    # item_merchant = JSON.parse(response.body, symbolize_names: true)[:data]
+    # require 'pry'; binding.pry 
+    expect(response.status).to eq(404)
+  end
 end

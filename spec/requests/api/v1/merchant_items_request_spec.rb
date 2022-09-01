@@ -4,7 +4,7 @@ require 'rails_helper'
     it "gets a merchant's items" do 
 
     id = create(:merchant).id 
-    merchant_items = create_list(:item, 3, merchant_id: id) #faker lets us do this instead of manually creating merchant and items in test
+    merchant_items = create_list(:item, 3, merchant_id: id)
 
     get "/api/v1/merchants/#{id}/items"
 
