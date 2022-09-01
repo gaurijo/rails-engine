@@ -6,11 +6,7 @@ class Api::V1::ItemsController < ApplicationController
 
   def show 
     item = Item.find(params[:id])
-    # if item.nil?
-    #   render json: { data: {message: "No items found"}}
-    # else
     render json: ItemSerializer.new(item)
-    # end
   end
   
   def create 
@@ -27,14 +23,14 @@ class Api::V1::ItemsController < ApplicationController
     item = Item.find(params[:id]).destroy
   end
 
-  # def find_price 
-  #   items = Item.where("unit_price = ?", params[:unit_price]).all
-  #   if items.nil?
-  #     render json: {data: {message: "No items found"}}
-  #   else
-  #     render json: ItemSerializer.new(items)
-  #   end
-  # end
+  def find_price 
+    item = Item.where("unit_price > ?", "#{params[:min_price]}")
+    if item.nil?
+      render json: { data: {} }
+    else
+      render json: ItemSerializer.new(item)
+    end
+  end
 
   def find_all 
     items = Item.where("name ILIKE ?", "%#{params[:name]}%").all
