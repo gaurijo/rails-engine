@@ -42,6 +42,15 @@ describe "Items API" do
     expect(item[:attributes][:unit_price]).to be_a(Float)
   end
 
+  it "returns an error if no such item id exists" do 
+    merchant_id = create(:merchant).id 
+    id = create(:item, merchant_id: merchant_id).id
+
+    get "/api/v1/items/99999"
+
+    expect(response.status).to eq(404)
+  end
+
   it "creates an item" do 
     merchant = create(:merchant)
 
