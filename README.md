@@ -43,7 +43,7 @@ Start the server
 
 ## Tech Stack
 
-**Client:** Ruby (2.7.4), JSON
+Ruby (2.7.4), HTML/JSON
 
 **Server:** Rails (5.2.8)
 
